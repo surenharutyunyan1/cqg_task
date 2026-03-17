@@ -1,0 +1,31 @@
+<div class="app-container">
+  <app-search-header
+    [searchTerm]="searchTerm()"
+    [isLoading]="isLoading()"
+    (searchChange)="onSearchChange($event)"
+    (reloadClick)="onReload()"
+  />
+
+  @if (!isLoading()) {
+    <app-package-list
+      [packages]="filteredPackages()"
+      [hoveredPackageId]="hoveredPackageId()"
+      [dependentPackageIds]="dependentPackageIds()"
+      (packageHover)="onPackageHover($event)"
+      (packageLeave)="onPackageLeave()"
+    />
+  }
+
+  @if (isLoading()) {
+    <div class="loading">
+      <div class="spinner"></div>
+      <p>Loading packages...</p>
+    </div>
+  }
+
+  @if (!isLoading() && filteredPackages().length === 0) {
+    <div class="empty-state">
+      <p>No packages found</p>
+    </div>
+  }
+</div>

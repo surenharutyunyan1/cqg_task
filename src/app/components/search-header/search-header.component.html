@@ -1,0 +1,18 @@
+<div class="header">
+  <div class="search-controls">
+    <input 
+      type="text" 
+      class="search-input" 
+      placeholder="Search packages..."
+      [value]="searchTerm()"
+      (input)="onSearchInput($any($event.target).value)"
+    />
+    <button 
+      class="reload-button" 
+      (click)="onReload()" 
+      [disabled]="isLoading()"
+      aria-label="Reload packages">
+      <span class="reload-icon">↻</span>
+    </button>
+  </div>
+</div>

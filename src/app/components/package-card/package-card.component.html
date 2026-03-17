@@ -1,0 +1,21 @@
+<div 
+  class="package-card"
+  [class.highlighted]="isHighlighted()"
+  [class.dependency-highlighted]="isDependencyHighlighted()"
+  (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()">
+  <div class="package-header">
+    @if (parsedName().scope) {
+      <span class="package-scope">{{ parsedName().scope }}/</span>
+    }<span class="package-name">{{ parsedName().name }}</span>
+  </div>
+  <div class="package-body">
+    <div class="package-stat">
+      <span class="stat-value">{{ formattedDownloads() }}</span>
+      <span class="stat-icon">⬇</span>
+    </div>
+    <div class="package-stat">
+      <span class="stat-text">{{ dependencyText() }}</span>
+    </div>
+  </div>
+</div>

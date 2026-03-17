@@ -1,0 +1,70 @@
+.package-card {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.package-card:hover {
+  border-color: #4a90e2;
+  box-shadow: 0 2px 8px rgba(74, 144, 226, 0.2);
+}
+
+.package-card.highlighted .package-header {
+  color: #4a90e2;
+  font-weight: 600;
+}
+
+.package-card.dependency-highlighted .package-header {
+  color: #e94b3c;
+  font-weight: 600;
+}
+
+.package-header {
+  font-size: 16px;
+  font-weight: 500;
+  word-break: break-word;
+  transition: color 0.2s ease;
+}
+
+.package-scope {
+  color: #ff8c42;
+  font-weight: 600;
+}
+
+.package-name {
+  color: inherit;
+}
+
+.package-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #666;
+  font-size: 14px;
+}
+
+.package-stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stat-value {
+  font-weight: 600;
+  color: #333;
+}
+
+.stat-icon {
+  font-size: 12px;
+}
+
+.stat-text {
+  color: #999;
+}

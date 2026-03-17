@@ -1,0 +1,11 @@
+<div class="package-list">
+  @for (pkg of packages(); track pkg.id) {
+    <app-package-card
+      [package]="pkg"
+      [isHighlighted]="isPackageHighlighted(pkg.id)"
+      [isDependencyHighlighted]="isPackageDependencyHighlighted(pkg.id)"
+      (hover)="onPackageHover($event)"
+      (leave)="onPackageLeave()"
+    />
+  }
+</div>

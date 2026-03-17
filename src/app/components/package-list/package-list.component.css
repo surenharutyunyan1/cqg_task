@@ -1,0 +1,19 @@
+.package-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 24px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-y: auto;
+  align-content: start;
+}
+
+@media (max-width: 768px) {
+  .package-list .cdk-virtual-scroll-content-wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    padding: 16px;
+    gap: 16px;
+  }
+}
